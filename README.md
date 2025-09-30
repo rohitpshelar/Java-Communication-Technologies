@@ -1,4 +1,5 @@
-<img width="1068" height="775" alt="Java" src="https://github.com/user-attachments/assets/0953a38c-bde1-4516-96d7-b80f9ac64a95" />
+<img width="976" height="757" alt="Java (3)" src="https://github.com/user-attachments/assets/3bfcac59-9688-4e3e-86f2-3b689903aeed" />
+
 
 # Communication Technologies Comparison
 
@@ -15,6 +16,7 @@
 | **ActiveMQ / RabbitMQ** | Message Queuing | Asynchronous, Message Broker | Decoupling services, reliable delivery, task distribution. |
 | **Kafka** | Event Streaming Platform | Asynchronous, Log-Based Streaming | High-throughput event streams, data pipelines, activity tracking. |
 | **MQTT** | Publish-Subscribe Model | Asynchronous | Decoupling services, Fire-and-Forget, pub/sub., synchronous cryptography to enable secure asynchronous messaging |
+| **GraphQL** | Flexible API Querying | Synchronous, Request/Response | APIs where clients need to request specific data, avoiding over-fetching and under-fetching |
 
 ## Detailed Explanations
 
@@ -41,6 +43,8 @@ These are used when a client sends a request and waits for a specific response f
 - **What it is:** A modern, high-performance RPC framework. It uses HTTP/2 for transport and Protocol Buffers (a binary, efficient data format) by default.
 - **Key Differentiator:** Very fast and efficient. Supports bi-directional streaming (not just simple request/response). Ideal for internal communication between microservices.
 - **Analogy:** A highly efficient, specialized courier service for internal company mail that can also handle continuous data feeds.
+
+#### GraphQL - Query Language & API Layer
 
 ### Category 2: Asynchronous & Event-Driven Messaging
 

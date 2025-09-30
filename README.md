@@ -13,7 +13,7 @@ Java Communication Technologies
 | **WebRTC** | Peer-to-Peer Data/Media | Asynchronous, Peer-to-Peer | Browser-based video/audio calls, file sharing, low-latency data. |
 | **ActiveMQ / RabbitMQ** | Message Queuing | Asynchronous, Message Broker | Decoupling services, reliable delivery, task distribution. |
 | **Kafka** | Event Streaming Platform | Asynchronous, Log-Based Streaming | High-throughput event streams, data pipelines, activity tracking. |
-| **MQTT ** | Publish-Subscribe Model | Asynchronous | Decoupling services, Fire-and-Forget, pub/sub., synchronous cryptography to enable secure asynchronous messaging |
+| **MQTT** | Publish-Subscribe Model | Asynchronous | Decoupling services, Fire-and-Forget, pub/sub., synchronous cryptography to enable secure asynchronous messaging |
 
 ## Detailed Explanations
 

@@ -1,4 +1,5 @@
-Java Communication Technologies
+<img width="1068" height="775" alt="Java" src="https://github.com/user-attachments/assets/0953a38c-bde1-4516-96d7-b80f9ac64a95" />
+
 # Communication Technologies Comparison
 
 ## High-Level Summary Table

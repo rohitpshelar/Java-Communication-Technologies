@@ -1,0 +1,28 @@
+version: '3.8'
+services:
+  kafka:
+    image: confluentinc/cp-kafka:8.0.1 # Or apache/kafka-native for a native image
+    hostname: kafka
+    container_name: kafka
+    ports:
+      - "9092:9092" # Client port
+      - "9093:9093" # Inter-broker/controller port
+    environment:
+      KAFKA_KRAFT_MODE: "true" # Enables KRaft mode
+#      docker run --rm confluentinc/cp-kafka:latest kafka-storage random-uuid
+      CLUSTER_ID: "m8FFMjKmQtOFsJbceqbB7w"
+      KAFKA_PROCESS_ROLES: controller,broker # Kafka acts as both controller and broker
+      KAFKA_NODE_ID: 1 # Unique ID for the Kafka instance
+      KAFKA_CONTROLLER_QUORUM_VOTERS: "1@localhost:9093" # Controller quorum definition
+      KAFKA_LISTENERS: "PLAINTEXT://0.0.0.0:9092,CONTROLLER://0.0.0.0:9093"
+      KAFKA_ADVERTISED_LISTENERS: "PLAINTEXT://localhost:9092" # Or your host IP
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+#    volumes:
+#      - kafka-data:/var/lib/kafka/data # Persistent storage for Kafka data
+#
+#volumes:
+#  kafka-data:

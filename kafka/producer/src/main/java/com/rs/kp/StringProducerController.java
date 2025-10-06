@@ -6,16 +6,16 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class ProducerController {
+public class StringProducerController {
 
     private final KafkaTemplate<String, String> kafkaTemplate;
 
-    public ProducerController(KafkaTemplate<String, String> kafkaTemplate) {
+    public StringProducerController(KafkaTemplate<String, String> kafkaTemplate) {
         this.kafkaTemplate = kafkaTemplate;
     }
 
-    @PostMapping("/send")
-    String sendMessage(@RequestBody String message) {
+    @PostMapping("/sendString")
+    String sendStringMessage(@RequestBody String message) {
         kafkaTemplate.send("string-topic", message);
         return message;
     }

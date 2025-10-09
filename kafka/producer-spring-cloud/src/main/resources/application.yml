@@ -1,0 +1,17 @@
+spring:
+  cloud:
+    function:
+      definition: sendStringMessage
+    stream:
+      function:
+        definition: sendStringMessage
+      bindings:
+        sendStringMessage-out-0:
+          destination: string-topic
+          contentType: text/plain
+      kafka:
+        binder:
+          brokers: localhost:9092
+
+server:
+  port: 8088

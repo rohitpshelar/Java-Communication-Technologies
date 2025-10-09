@@ -1,7 +1,7 @@
 rootProject.name = 'ct'
 
 //include 'kafka:producer'
-['producer','consumer','common'].forEach { proj ->
+['producer','consumer','common', 'producer-spring-cloud', 'consumer-spring-cloud'].forEach { proj ->
     {
         include(":kafka:${proj}")
         project(":kafka:${proj}").projectDir = file("kafka/${proj}")

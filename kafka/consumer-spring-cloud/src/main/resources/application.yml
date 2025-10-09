@@ -1,0 +1,15 @@
+spring:
+  cloud:
+    function:
+      definition: receiveStringMessage
+    stream:
+      function:
+        definition: receiveStringMessage
+      bindings:
+        receiveStringMessage-in-0:
+          destination: string-topic
+          contentType: text/plain
+      kafka:
+        binder:
+          brokers: localhost:9092
+

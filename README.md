@@ -5,18 +5,18 @@
 
 ## High-Level Summary Table
 
-| Technology | Primary Purpose | Communication Pattern | Best For |
-| :--- | :--- | :--- | :--- |
-| **Webhook** | Event Notification | Asynchronous, Push (HTTP POST) | Simple, one-way event notifications (e.g., "payment completed"). |
-| **REST API** | Resource Management | Synchronous, Request/Response | Stateless CRUD operations, public-facing APIs, mobile apps. |
-| **SOAP API** | Structured Service Calls | Synchronous, Request/Response | Enterprise-grade, secure, transactional services (e.g., banking). |
-| **gRPC** | High-Performance Services | Synchronous/Async, Request/Response | Microservices, internal systems, low-latency, streaming. |
-| **WebSocket** | Full-Duplex Communication | Asynchronous, Persistent Connection | Real-time, interactive apps (e.g., chat, live feeds, games). |
-| **WebRTC** | Peer-to-Peer Data/Media | Asynchronous, Peer-to-Peer | Browser-based video/audio calls, file sharing, low-latency data. |
-| **ActiveMQ / RabbitMQ** | Message Queuing | Asynchronous, Message Broker | Decoupling services, reliable delivery, task distribution. |
-| **Kafka** | Event Streaming Platform | Asynchronous, Log-Based Streaming | High-throughput event streams, data pipelines, activity tracking. |
-| **MQTT** | Publish-Subscribe Model | Asynchronous | Decoupling services, Fire-and-Forget, pub/sub., synchronous cryptography to enable secure asynchronous messaging |
-| **GraphQL** | Flexible API Querying | Synchronous, Request/Response | APIs where clients need to request specific data, avoiding over-fetching and under-fetching |
+| Technology                     | Primary Purpose | Communication Pattern | Best For |
+|:-------------------------------| :--- | :--- | :--- |
+| **Webhook**                    | Event Notification | Asynchronous, Push (HTTP POST) | Simple, one-way event notifications (e.g., "payment completed"). |
+| **REST API**                   | Resource Management | Synchronous, Request/Response | Stateless CRUD operations, public-facing APIs, mobile apps. |
+| **SOAP API**                   | Structured Service Calls | Synchronous, Request/Response | Enterprise-grade, secure, transactional services (e.g., banking). |
+| **gRPC**                       | High-Performance Services | Synchronous/Async, Request/Response | Microservices, internal systems, low-latency, streaming. |
+| **WebSocket**                  | Full-Duplex Communication | Asynchronous, Persistent Connection | Real-time, interactive apps (e.g., chat, live feeds, games). |
+| **WebRTC**                     | Peer-to-Peer Data/Media | Asynchronous, Peer-to-Peer | Browser-based video/audio calls, file sharing, low-latency data. |
+| **ActiveMQ / RabbitMQ**        | Message Queuing | Asynchronous, Message Broker | Decoupling services, reliable delivery, task distribution. |
+| **[kafka.md](kafka/kafka.md)** | Event Streaming Platform | Asynchronous, Log-Based Streaming | High-throughput event streams, data pipelines, activity tracking. |
+| **MQTT**                       | Publish-Subscribe Model | Asynchronous | Decoupling services, Fire-and-Forget, pub/sub., synchronous cryptography to enable secure asynchronous messaging |
+| **GraphQL**                    | Flexible API Querying | Synchronous, Request/Response | APIs where clients need to request specific data, avoiding over-fetching and under-fetching |
 
 ## Detailed Explanations
 

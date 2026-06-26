@@ -1,0 +1,81 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '4.1.0'
+    id 'io.spring.dependency-management' version '1.1.7'
+    id 'com.google.protobuf' version '0.9.4'
+}
+
+group = 'org.example'
+version = '0.0.1-SNAPSHOT'
+description = 'gRPC_server'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+ext {
+    lognetGrpcVersion = '4.7.1'
+    grpcVersion = '1.53.0'
+    protobufVersion = '4.35.1'
+    protobufJavaVersion = '4.35.1'
+}
+
+// Determine platform classifier for platform-specific protoc/grpc executables
+def osClassifier
+def osName = System.getProperty('os.name').toLowerCase()
+if (osName.contains('win')) {
+    osClassifier = 'windows-x86_64'
+} else if (osName.contains('mac') || osName.contains('darwin')) {
+    osClassifier = 'osx-x86_64'
+} else {
+    osClassifier = 'linux-x86_64'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'io.github.lognet:grpc-spring-boot-starter:5.2.0'
+    implementation 'com.google.protobuf:protobuf-java:4.35.1'
+    implementation 'jakarta.annotation:jakarta.annotation-api:3.0.0'
+
+    implementation ('net.devh:grpc-server-spring-boot-starter:3.1.0.RELEASE') {
+        exclude group: 'com.google.protobuf', module: 'protobuf-java'
+    }
+    implementation 'io.jsonwebtoken:jjwt-api:0.13.0'
+    implementation 'javax.annotation:javax.annotation-api:1.3.2'
+
+    implementation 'org.springframework.boot:spring-boot-starter'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+protobuf {
+    protoc {
+        // Use platform-specific protoc executable
+        artifact = "com.google.protobuf:protoc:${protobufVersion}:${osClassifier}@exe"
+    }
+
+    plugins {
+        grpc {
+            // Platform-specific protoc-gen-grpc-java executable
+            artifact = "io.grpc:protoc-gen-grpc-java:${grpcVersion}:${osClassifier}@exe"
+        }
+    }
+
+    generateProtoTasks {
+        all().each { task ->
+            task.plugins {
+                grpc {}
+            }
+        }
+    }
+}
+
+
+tasks.named('test') {
+    useJUnitPlatform()
+}

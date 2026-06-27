@@ -10,3 +10,10 @@ rootProject.name = 'ct'
         project(":kafka:${proj}").projectDir = file("kafka/${proj}")
     }
 }
+
+['gRPC_Core','gRPC_server'].forEach { proj ->
+    {
+        include(":gRPC:${proj}")
+        project(":gRPC:${proj}").projectDir = file("gRPC/${proj}")
+    }
+}
